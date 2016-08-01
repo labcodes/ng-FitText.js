@@ -85,8 +85,8 @@
             scope.$watch(attrs.ngBind, function() { resizer() });
 
             config.debounce
-              ? angular.element(window).bind('resize', config.debounce(function(){ scope.$apply(resizer)}, config.delay))
-              : angular.element(window).bind('resize', function(){ scope.$apply(resizer)});
+              ? angular.element(window).bind('resize', config.debounce(function(){ resizer() }, config.delay))
+              : angular.element(window).bind('resize', function(){ resizer() });
           }
         }
       }
